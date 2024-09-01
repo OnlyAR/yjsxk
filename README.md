@@ -6,7 +6,7 @@
 pip install -r requirements.txt
 ```
 
-然后安装 Google Chrome 浏览器，下载对应版本的 chromedriver，其中出现问题自行查阅资料。
+然后安装 Google Chrome 浏览器，下载对应版本的 chromedriver，保存在 `yjsxk` 目录下的 `driver` 文件夹中。
 
 ## 2. 使用方法
 
