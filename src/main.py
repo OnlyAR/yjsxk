@@ -8,6 +8,7 @@ from typing import Optional
 from loguru import logger
 from selenium import webdriver
 from selenium.common import NoSuchElementException
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium_stealth import stealth
@@ -26,7 +27,8 @@ class Engine:
         if not show_browser:
             options.add_argument("--headless")
 
-        self.driver = webdriver.Chrome(options=options)
+        service = Service("../driver/chromedriver")
+        self.driver = webdriver.Chrome(options=options, service=service)
 
         stealth(
             self.driver,
