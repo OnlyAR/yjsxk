@@ -163,4 +163,4 @@ cython_debug/
 data/
 driver/
 *.sh
-*.txt
+log.txt

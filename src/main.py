@@ -121,8 +121,8 @@ class Engine:
                     break
 
         if target_class is None:
-            logger.error(f"找不到课程 {course_name}")
-            raise ValueError(f"找不到课程 {course_name}")
+            logger.error(f'找不到课程 {course_id + "-" + course_name}')
+            raise ValueError(f'找不到课程 {course_id + "-" + course_name}')
 
         volume = target_class.find_element(By.XPATH, 'td[9]/span').text
         logger.info(f"课程 {course_name} 容量：{volume}")
@@ -164,7 +164,7 @@ if __name__ == '__main__':
 
     logger.remove(0)
     logger.add(sys.stderr, level="INFO")
-    logger.add("log.txt", level="INFO")
+    logger.add("../log.txt", level="INFO")
 
     if args.task == "login":
         Engine(show_browser=True).login()
